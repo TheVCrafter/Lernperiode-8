@@ -51,10 +51,10 @@ Im **Fabric-Modding-Umfeld** wird Kotlin aktiv unterstützt, beispielsweise durc
 
 ### Sitzung 1 – Freitag, 09.01.2026
 **Arbeitspakete:**
-- [X] Recherche zu verschiedenen möglichen Technologien
-- [ ] Entscheidung für Kotlin und Begründung der Wahl
-- [ ] Einrichtung der Entwicklungsumgebung
-- [ ] Schreiben eines einfachen „Hello World“-Programms in Kotlin
+- [ ] **Hello World:** Ein einfaches „Hello World“-Programm in Kotlin schreiben, um die Entwicklungsumgebung zu testen.
+- [ ] **Variablen und Datentypen:** Verschiedene Variablen (`val`/`var`) und Datentypen erstellen, einfache Rechenoperationen durchführen und Ergebnisse auf der Konsole ausgeben.
+- [ ] **Bedingungen und Schleifen:** Ein kleines Programm schreiben, das `if`/`when` und `for`/`while` verwendet, um Entscheidungen zu treffen und Wiederholungen zu demonstrieren.
+- [ ] **Funktionen und Klassen:** Eine kleine Klasse mit Methoden für einfache Berechnungen erstellen, Kotlin-spezifische Features wie Null-Safety und Standardparameter verwenden.
 
 **Lernbericht:**
 

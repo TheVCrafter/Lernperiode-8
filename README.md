@@ -70,7 +70,8 @@ Durch diese Arbeit konnte ich die **Kotlin-Syntax, Kontrollstrukturen, Benutzeri
 
 ### Sitzung 2 – Freitag, 16.01.2026
 > **Hinweis:** Für diese Lernperiode setze ich **Fred AI** ein, einen von mir implementierten AI-Tutor, der mir hilft, Beispiele zu generieren, Konzepte zu erklären und Übungen zu erstellen. Die Arbeit wird aber immer selbstständig in Kotlin umgesetzt und dokumentiert.
-**Arbeitspakete**
+
+**Arbeitspakete:**
 - [ ] **Funktionen & Parameter:** Mehrere Funktionen schreiben, die einfache Aufgaben übernehmen (z. B. Rechnen, Prüfen von Bedingungen, Rückgabe von Werten). Dabei Parameterübergabe, Rückgabewerte und Standardparameter üben. Mit **Fred AI** kleine Funktionsbeispiele generieren und eigene Varianten erstellen.
 - [ ] **Collections & Schleifen:** Mit Listen, Arrays, Sets und Maps arbeiten. Schleifen (`for`/`while`) schreiben, die über Collections iterieren und Bedingungen prüfen (`if`/`when`). Beispiele von **Fred AI** ausprobieren und eigene Varianten (Filtern, Summenberechnen, Durchschnitt) erstellen.
 - [ ] **Exception Handling & Benutzerinteraktionen:** Benutzereingaben lesen und auf gültige Werte prüfen. Fehler mit `try/catch` abfangen und Wiederholungsschleifen einbauen. **Fred AI** für Eingabe- und Validierungsbeispiele nutzen und diese selbst erweitern.

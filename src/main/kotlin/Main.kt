@@ -1,4 +1,4 @@
-fun main(_args: Array<String>) {
+fun main(args: Array<String>) {
     println("Hello World!")
     val aChar = 'a'
     println("This is the char: $aChar")

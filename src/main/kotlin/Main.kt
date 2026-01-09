@@ -1,3 +1,5 @@
+import java.lang.Exception
+
 fun main(args: Array<String>) {
     println("Hello World!")
     val aChar = 'a'
@@ -25,4 +27,37 @@ fun main(args: Array<String>) {
     for (i in randomArray){
         println(randomArray[i])
     }
+    val randomValue = (0..1).random()
+    if (randomValue == 1) {
+        println("You win!")
+    }
+    else {
+        println("You lose!")
+    }
+    print("Enter a Number between 1 and 7: ")
+    while (true){
+        try {
+            val day = when(readln().toInt()){
+                1 -> "Monday"
+                2 -> "Tuesday"
+                3 -> "Wednesday"
+                4 -> "Thursday"
+                5 -> "Friday"
+                6 -> "Saturday"
+                7 -> "Sunday"
+                else -> "invalid Input"
+            }
+            if(day != "invalid Input") {
+                println("Your random Day is $day")
+                break
+            }
+            else {
+                println("Your input was invalid, please try again!")
+            }
+        }
+        catch (e:Exception){
+            throw e
+        }
+    }
+
 }

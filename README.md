@@ -34,7 +34,7 @@ Kotlin wird unter anderem in der Android-Entwicklung, im Backend-Bereich und zun
 
 Ich habe mich für Kotlin entschieden, da ich einen Einstieg in das **Minecraft-Modding** anstrebe. Minecraft selbst ist in Java programmiert, weshalb Kotlin als moderne und kompatible JVM-Sprache besonders geeignet ist.
 
-Im **Fabric-Modding-Umfeld** wird Kotlin aktiv unterstützt, beispielsweise durch *Fabric Language Kotlin*. Kotlin ermöglicht eine übersichtlichere Code-Struktur und erleichtert das Arbeiten an größeren Projekten, was für Mod-Entwicklung von Vorteil ist.
+Im **Fabric-Modding-Umfeld** wird Kotlin aktiv unterstützt, beispielsweise durch *Fabric Language Kotlin*. Kotlin ermöglicht eine übersichtlichere Code-Struktur und erleichtert das Arbeiten an grösseren Projekten, was für Mod-Entwicklung von Vorteil ist.
 
 ---
 
@@ -58,6 +58,22 @@ Im **Fabric-Modding-Umfeld** wird Kotlin aktiv unterstützt, beispielsweise durc
 
 **Lernbericht:**
 
-Heute habe ich...
+### Lernbericht – Freitag, 09.01.2026
+
+Heute habe ich die Grundlagen von **Kotlin** praktisch geübt.  
+Ich habe ein erstes „Hello World“-Programm erstellt und mit **Variablen, Datentypen und Operatoren** gearbeitet, darunter `Int` und `Char`.  
+Anschliessend habe ich **Schleifen** (`while` und `for`) getestet, Bedingungen mit `if` und `when` implementiert und mit Arrays gearbeitet.  
+Aussserdem habe ich einfache **Benutzereingaben** verarbeitet, z. B. um einen Wochentag auszuwählen oder Werte für einen Taschenrechner einzugeben.  
+Zum Schluss habe ich eine **Calculator-Klasse** geschrieben, die zwei Zahlen mit einem Operator verarbeitet und das Ergebnis ausgibt, einschliesslich einer Prüfung auf ungültige Operatoren oder Division durch null.  
+Durch diese Arbeit konnte ich die **Kotlin-Syntax, Kontrollstrukturen, Benutzerinteraktionen und einfache Klassen** praktisch anwenden.
 
 ---
+> **Hinweis:** Für diese Lernperiode setze ich **Fred AI** ein, einen von mir implementierten AI-Tutor, der mir hilft, Beispiele zu generieren, Konzepte zu erklären und Übungen zu erstellen. Die Arbeit wird aber immer selbstständig in Kotlin umgesetzt und dokumentiert.
+
+### Sitzung 2 – Freitag, 16.01.2026
+
+**Arbeitspakete**
+- [ ] **Funktionen & Parameter:** Mehrere Funktionen schreiben, die einfache Aufgaben übernehmen (z. B. Rechnen, Prüfen von Bedingungen, Rückgabe von Werten). Dabei Parameterübergabe, Rückgabewerte und Standardparameter üben. Mit **Fred AI** kleine Funktionsbeispiele generieren und eigene Varianten erstellen.
+- [ ] **Collections & Schleifen:** Mit Listen, Arrays, Sets und Maps arbeiten. Schleifen (`for`/`while`) schreiben, die über Collections iterieren und Bedingungen prüfen (`if`/`when`). Beispiele von **Fred AI** ausprobieren und eigene Varianten (Filtern, Summenberechnen, Durchschnitt) erstellen.
+- [ ] **Exception Handling & Benutzerinteraktionen:** Benutzereingaben lesen und auf gültige Werte prüfen. Fehler mit `try/catch` abfangen und Wiederholungsschleifen einbauen. **Fred AI** für Eingabe- und Validierungsbeispiele nutzen und diese selbst erweitern.
+- [ ] **Klassen & Objekte erweitern:** Neue Klasse (z. B. `BankAccount` oder `Player`) erstellen mit mehreren Eigenschaften und Methoden. Konstruktoren, `init`-Blöcke und Funktionen innerhalb der Klasse üben. Objekte in `main()` erzeugen und Methoden testen, mit Hilfe von **Fred AI** Beispiele erweitern.

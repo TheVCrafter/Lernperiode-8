@@ -25,7 +25,7 @@ fun main(args: Array<String>) {
     println(text)
     val randomArray = arrayOf(0,1,2,3,4,5,6,7,8,9,10)
     for (i in randomArray){
-        println(randomArray[i])
+        println(i)
     }
     val randomValue = (0..1).random()
     if (randomValue == 1) {
@@ -59,5 +59,13 @@ fun main(args: Array<String>) {
             throw e
         }
     }
+    print("Enter a first Number: ")
+    val firstValue = readln().toInt()
+    print("Enter a second Number: ")
+    val secondValue = readln().toInt()
+    print("Enter a Operator [*],[/],[+],[-]: ")
+    val operator = readln()[0]
+    val calculator = Calculator(firstValue, secondValue, operator)
+    println(calculator.Calculate())
 
 }

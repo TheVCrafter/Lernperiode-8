@@ -58,6 +58,7 @@ Im **Fabric-Modding-Umfeld** wird Kotlin aktiv unterstützt, beispielsweise durc
 
 
 **Lernbericht:**
+
 Heute habe ich die Grundlagen von **Kotlin** praktisch geübt.  
 Ich habe ein erstes „Hello World“-Programm erstellt und mit **Variablen, Datentypen und Operatoren** gearbeitet, darunter `Int` und `Char`.  
 Anschliessend habe ich **Schleifen** (`while` und `for`) getestet, Bedingungen mit `if` und `when` implementiert und mit Arrays gearbeitet.  

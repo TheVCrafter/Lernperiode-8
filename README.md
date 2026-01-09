@@ -68,10 +68,9 @@ Zum Schluss habe ich eine **Calculator-Klasse** geschrieben, die zwei Zahlen mit
 Durch diese Arbeit konnte ich die **Kotlin-Syntax, Kontrollstrukturen, Benutzerinteraktionen und einfache Klassen** praktisch anwenden.
 
 ---
-> **Hinweis:** Für diese Lernperiode setze ich **Fred AI** ein, einen von mir implementierten AI-Tutor, der mir hilft, Beispiele zu generieren, Konzepte zu erklären und Übungen zu erstellen. Die Arbeit wird aber immer selbstständig in Kotlin umgesetzt und dokumentiert.
 
 ### Sitzung 2 – Freitag, 16.01.2026
-
+> **Hinweis:** Für diese Lernperiode setze ich **Fred AI** ein, einen von mir implementierten AI-Tutor, der mir hilft, Beispiele zu generieren, Konzepte zu erklären und Übungen zu erstellen. Die Arbeit wird aber immer selbstständig in Kotlin umgesetzt und dokumentiert.
 **Arbeitspakete**
 - [ ] **Funktionen & Parameter:** Mehrere Funktionen schreiben, die einfache Aufgaben übernehmen (z. B. Rechnen, Prüfen von Bedingungen, Rückgabe von Werten). Dabei Parameterübergabe, Rückgabewerte und Standardparameter üben. Mit **Fred AI** kleine Funktionsbeispiele generieren und eigene Varianten erstellen.
 - [ ] **Collections & Schleifen:** Mit Listen, Arrays, Sets und Maps arbeiten. Schleifen (`for`/`while`) schreiben, die über Collections iterieren und Bedingungen prüfen (`if`/`when`). Beispiele von **Fred AI** ausprobieren und eigene Varianten (Filtern, Summenberechnen, Durchschnitt) erstellen.

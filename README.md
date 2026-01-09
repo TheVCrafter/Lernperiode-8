@@ -56,10 +56,8 @@ Im **Fabric-Modding-Umfeld** wird Kotlin aktiv unterstützt, beispielsweise durc
 - [X] **Bedingungen und Schleifen:** Ein kleines Programm schreiben, das `if`/`when` und `for`/`while` verwendet, um Entscheidungen zu treffen und Wiederholungen zu demonstrieren.
 - [X] **Funktionen und Klassen:** Eine kleine Klasse mit Methoden für einfache Berechnungen erstellen, Kotlin-spezifische Features wie Null-Safety und Standardparameter verwenden.
 
+
 **Lernbericht:**
-
-### Lernbericht – Freitag, 09.01.2026
-
 Heute habe ich die Grundlagen von **Kotlin** praktisch geübt.  
 Ich habe ein erstes „Hello World“-Programm erstellt und mit **Variablen, Datentypen und Operatoren** gearbeitet, darunter `Int` und `Char`.  
 Anschliessend habe ich **Schleifen** (`while` und `for`) getestet, Bedingungen mit `if` und `when` implementiert und mit Arrays gearbeitet.  

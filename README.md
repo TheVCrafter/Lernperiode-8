@@ -72,10 +72,10 @@ Durch diese Arbeit konnte ich die **Kotlin-Syntax, Kontrollstrukturen, Benutzeri
 
 **Arbeitspakete:**
 
-- [ ] **Funktionen & Parameter:** Mehrere eigene Funktionen in Kotlin schreiben, die einfache Aufgaben übernehmen (z. B. Rechenoperationen, Überprüfen von Bedingungen, Rückgabe von Werten). Dabei Parameterübergabe, Rückgabewerte und Standardparameter anwenden und testen.
-- [ ] **Collections & Schleifen:** Mit grundlegenden Collections wie `List`, `Array`, `Set` und `Map` arbeiten. Schleifen (`for`, `while`) verwenden, um über Collections zu iterieren. Einfache Aufgaben wie Filtern von Werten, Summenberechnung oder Durchschnittsberechnung umsetzen.
-- [ ] **Exception Handling & Benutzerinteraktionen:** Benutzereingaben über die Konsole einlesen und auf gültige Werte prüfen. Fehler mithilfe von `try/catch` abfangen (z. B. ungültige Zahlen oder Division durch null) und Programme stabil gestalten.
-- [ ] **Klassen & Objekte erweitern:** Eine eigene Klasse (z. B. `BankAccount`, `Player` oder `Calculator`) mit mehreren Eigenschaften und Methoden erstellen. Konstruktoren, Methoden und Objekt-Erstellung in `main()` üben und testen.
+- [X] **Funktionen & Parameter:** Mehrere eigene Funktionen in Kotlin schreiben, die einfache Aufgaben übernehmen (z. B. Rechenoperationen, Überprüfen von Bedingungen, Rückgabe von Werten). Dabei Parameterübergabe, Rückgabewerte und Standardparameter anwenden und testen.
+- [X] **Collections & Schleifen:** Mit grundlegenden Collections wie `List`, `Array`, `Set` und `Map` arbeiten. Schleifen (`for`, `while`) verwenden, um über Collections zu iterieren. Einfache Aufgaben wie Filtern von Werten, Summenberechnung oder Durchschnittsberechnung umsetzen.
+- [X] **Exception Handling & Benutzerinteraktionen:** Benutzereingaben über die Konsole einlesen und auf gültige Werte prüfen. Fehler mithilfe von `try/catch` abfangen (z. B. ungültige Zahlen oder Division durch null) und Programme stabil gestalten.
+- [X] **Klassen & Objekte erweitern:** Eine eigene Klasse (z. B. `BankAccount`, `Player` oder `Calculator`) mit mehreren Eigenschaften und Methoden erstellen. Konstruktoren, Methoden und Objekt-Erstellung in `main()` üben und testen.
 
 **Lernbericht:**
 

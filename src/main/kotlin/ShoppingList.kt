@@ -1,64 +1,83 @@
-import java.time.LocalDate
 import java.math.BigDecimal
 import java.math.RoundingMode
+import java.time.LocalDate
+
+data class Item(
+    val name: String,
+    val amount: Int,
+    val price: BigDecimal
+)
 
 class ShoppingList {
-    private val products = mutableListOf<String>()
-    private val prices = mutableListOf<BigDecimal>()
-    private val amounts = mutableListOf<Int>()
+    private val items = mutableListOf<Item>()
     private val date: LocalDate = LocalDate.now()
 
     fun addItem() {
-        print("Enter the name of the item: ")
-        val name = readln().trim()
-        products.add(name)
-
+        val name = readNonEmptyString("Enter the name of the item: ")
         val amount = readInt("Enter the amount you want to buy: ", min = 1)
-        amounts.add(amount)
-
-        val price = readMoney("Enter the price of the product: ")
-        prices.add(price)
-
-        println("✅ Added: $amount x $name @ CHF ${price.toPlainString()}")
+        val price = readMoney("Enter the price of the product (e.g. 2.50): ")
+        items.add(Item(name, amount, price))
+        println("${CliColor.GREEN}Added: $amount x $name @ CHF ${price.toPlainString()}${CliColor.RESET}")
     }
 
     fun displayList() {
-        println("\n--- Shopping List ($date) ---")
+        println()
+        println("${CliColor.CYAN}${CliColor.BOLD}--- Shopping List ($date) ---${CliColor.RESET}")
 
-        if (products.isEmpty()) {
-            println("No items yet.")
+        if (items.isEmpty()) {
+            println("${CliColor.YELLOW}No items yet.${CliColor.RESET}")
             return
         }
 
         var total = BigDecimal.ZERO
 
-        for (i in products.indices) {
-            val lineTotal = prices[i].multiply(BigDecimal(amounts[i]))
+        items.forEachIndexed { index, item ->
+            val lineTotal =
+                item.price.multiply(BigDecimal(item.amount))
+                    .setScale(2, RoundingMode.HALF_UP)
+
             total = total.add(lineTotal)
 
-            println("${i + 1}. ${amounts[i]}x ${products[i]} - CHF ${prices[i]} (Line: CHF ${lineTotal.setScale(2, RoundingMode.HALF_UP)})")
+            println(
+                "${CliColor.YELLOW}${index + 1}. ${item.amount}x ${item.name}${CliColor.RESET} " +
+                        "- CHF ${item.price.toPlainString()} " +
+                        "${CliColor.BLUE}(Line: CHF ${lineTotal.toPlainString()})${CliColor.RESET}"
+            )
         }
 
-        println("----------------------------")
-        println("Total: CHF ${total.setScale(2, RoundingMode.HALF_UP)}")
+        println("${CliColor.CYAN}----------------------------${CliColor.RESET}")
+        println(
+            "${CliColor.GREEN}${CliColor.BOLD}Total: CHF ${
+                total.setScale(2, RoundingMode.HALF_UP).toPlainString()
+            }${CliColor.RESET}"
+        )
     }
 
-    private fun readInt(prompt: String, min: Int? = null): Int {
+    private fun readNonEmptyString(prompt: String): String {
         while (true) {
             print(prompt)
-            val input = readln().trim()
+            val value = readln().trim()
+            if (value.isNotEmpty()) return value
+            println("${CliColor.RED}Please enter a non-empty text.${CliColor.RESET}")
+        }
+    }
 
-            val value = input.toIntOrNull()
+    private fun readInt(prompt: String, min: Int? = null, max: Int? = null): Int {
+        while (true) {
+            print(prompt)
+            val value = readln().trim().toIntOrNull()
             if (value == null) {
-                println("Please enter a valid whole number.")
+                println("${CliColor.RED}Please enter a valid whole number.${CliColor.RESET}")
                 continue
             }
-
             if (min != null && value < min) {
-                println("Please enter a number >= $min.")
+                println("${CliColor.RED}Please enter a number >= $min.${CliColor.RESET}")
                 continue
             }
-
+            if (max != null && value > max) {
+                println("${CliColor.RED}Please enter a number <= $max.${CliColor.RESET}")
+                continue
+            }
             return value
         }
     }
@@ -67,11 +86,15 @@ class ShoppingList {
         while (true) {
             print(prompt)
             val input = readln().trim().replace(",", ".")
-
             try {
-                return BigDecimal(input).setScale(2, RoundingMode.HALF_UP)
-            } catch (e: Exception) {
-                println("Please enter a valid price (e.g. 2.50).")
+                val value = BigDecimal(input)
+                if (value < BigDecimal.ZERO) {
+                    println("${CliColor.RED}Price cannot be negative.${CliColor.RESET}")
+                    continue
+                }
+                return value.setScale(2, RoundingMode.HALF_UP)
+            } catch (_: Exception) {
+                println("${CliColor.RED}Please enter a valid price (e.g. 2.50).${CliColor.RESET}")
             }
         }
     }

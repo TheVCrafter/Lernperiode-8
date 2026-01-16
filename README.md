@@ -1,4 +1,4 @@
-# Lernperiode 8 – Programming Technology
+# Lernperiode 8 - Programming Technology
 
 **Zeitraum:** 09.01.2026 – 13.02.2026  
 **Technologie:** Kotlin  
@@ -68,7 +68,7 @@ Durch diese Arbeit konnte ich die **Kotlin-Syntax, Kontrollstrukturen, Benutzeri
 
 ---
 
-### Sitzung 2 – Freitag, 16.01.2026
+### Sitzung 2 - Freitag, 16.01.2026
 
 **Arbeitspakete:**
 

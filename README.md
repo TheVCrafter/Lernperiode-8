@@ -76,3 +76,12 @@ Durch diese Arbeit konnte ich die **Kotlin-Syntax, Kontrollstrukturen, Benutzeri
 - [ ] **Collections & Schleifen:** Mit grundlegenden Collections wie `List`, `Array`, `Set` und `Map` arbeiten. Schleifen (`for`, `while`) verwenden, um über Collections zu iterieren. Einfache Aufgaben wie Filtern von Werten, Summenberechnung oder Durchschnittsberechnung umsetzen.
 - [ ] **Exception Handling & Benutzerinteraktionen:** Benutzereingaben über die Konsole einlesen und auf gültige Werte prüfen. Fehler mithilfe von `try/catch` abfangen (z. B. ungültige Zahlen oder Division durch null) und Programme stabil gestalten.
 - [ ] **Klassen & Objekte erweitern:** Eine eigene Klasse (z. B. `BankAccount`, `Player` oder `Calculator`) mit mehreren Eigenschaften und Methoden erstellen. Konstruktoren, Methoden und Objekt-Erstellung in `main()` üben und testen.
+
+**Lernbericht:**
+
+Heute habe ich mein Kotlin-Projekt in mehreren Schritten weiterentwickelt.  
+Zunächst habe ich mit **Funktionen, Arrays und Maps** experimentiert, um den Umgang mit grundlegenden Sprachkonstrukten und Collections in Kotlin zu vertiefen.
+Darauf aufbauend habe ich eine eigene **ShoppingList-Klasse** implementiert, mit der Produkte, Mengen und Preise strukturiert verwaltet werden können. Dabei habe ich objektorientierte Konzepte wie Klassen, Eigenschaften und Methoden praktisch angewendet.
+Zum Abschluss habe ich die **Code-Struktur sowie das CLI-Design überarbeitet**, um die Anwendung übersichtlicher und benutzerfreundlicher zu gestalten. Die Navigation wurde verbessert und der Code klarer organisiert.
+Die Entwicklung erfolgte schrittweise und wurde mit **Git versioniert**, sodass die einzelnen Lern- und Entwicklungsschritte über die Commit-History nachvollziehbar sind.  
+Durch diese Arbeit konnte ich meine Kenntnisse in **Funktionen, Datenstrukturen, objektorientierter Programmierung und sauberem Code-Design in Kotlin** weiter vertiefen.

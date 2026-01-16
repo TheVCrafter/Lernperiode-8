@@ -69,10 +69,10 @@ Durch diese Arbeit konnte ich die **Kotlin-Syntax, Kontrollstrukturen, Benutzeri
 ---
 
 ### Sitzung 2 – Freitag, 16.01.2026
-> **Hinweis:** Für diese Lernperiode setze ich **Fred AI** ein, einen von mir implementierten AI-Tutor, der mir hilft, Beispiele zu generieren, Konzepte zu erklären und Übungen zu erstellen. Die Arbeit wird aber immer selbstständig in Kotlin umgesetzt und dokumentiert.
 
 **Arbeitspakete:**
-- [ ] **Funktionen & Parameter:** Mehrere Funktionen schreiben, die einfache Aufgaben übernehmen (z. B. Rechnen, Prüfen von Bedingungen, Rückgabe von Werten). Dabei Parameterübergabe, Rückgabewerte und Standardparameter üben. Mit **Fred AI** kleine Funktionsbeispiele generieren und eigene Varianten erstellen.
-- [ ] **Collections & Schleifen:** Mit Listen, Arrays, Sets und Maps arbeiten. Schleifen (`for`/`while`) schreiben, die über Collections iterieren und Bedingungen prüfen (`if`/`when`). Beispiele von **Fred AI** ausprobieren und eigene Varianten (Filtern, Summenberechnen, Durchschnitt) erstellen.
-- [ ] **Exception Handling & Benutzerinteraktionen:** Benutzereingaben lesen und auf gültige Werte prüfen. Fehler mit `try/catch` abfangen und Wiederholungsschleifen einbauen. **Fred AI** für Eingabe- und Validierungsbeispiele nutzen und diese selbst erweitern.
-- [ ] **Klassen & Objekte erweitern:** Neue Klasse (z. B. `BankAccount` oder `Player`) erstellen mit mehreren Eigenschaften und Methoden. Konstruktoren, `init`-Blöcke und Funktionen innerhalb der Klasse üben. Objekte in `main()` erzeugen und Methoden testen, mit Hilfe von **Fred AI** Beispiele erweitern.
+
+- [ ] **Funktionen & Parameter:** Mehrere eigene Funktionen in Kotlin schreiben, die einfache Aufgaben übernehmen (z. B. Rechenoperationen, Überprüfen von Bedingungen, Rückgabe von Werten). Dabei Parameterübergabe, Rückgabewerte und Standardparameter anwenden und testen.
+- [ ] **Collections & Schleifen:** Mit grundlegenden Collections wie `List`, `Array`, `Set` und `Map` arbeiten. Schleifen (`for`, `while`) verwenden, um über Collections zu iterieren. Einfache Aufgaben wie Filtern von Werten, Summenberechnung oder Durchschnittsberechnung umsetzen.
+- [ ] **Exception Handling & Benutzerinteraktionen:** Benutzereingaben über die Konsole einlesen und auf gültige Werte prüfen. Fehler mithilfe von `try/catch` abfangen (z. B. ungültige Zahlen oder Division durch null) und Programme stabil gestalten.
+- [ ] **Klassen & Objekte erweitern:** Eine eigene Klasse (z. B. `BankAccount`, `Player` oder `Calculator`) mit mehreren Eigenschaften und Methoden erstellen. Konstruktoren, Methoden und Objekt-Erstellung in `main()` üben und testen.

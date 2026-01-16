@@ -85,3 +85,17 @@ Darauf aufbauend habe ich eine eigene **ShoppingList-Klasse** implementiert, mit
 Zum Abschluss habe ich die **Code-Struktur sowie das CLI-Design überarbeitet**, um die Anwendung übersichtlicher und benutzerfreundlicher zu gestalten. Die Navigation wurde verbessert und der Code klarer organisiert.
 Die Entwicklung erfolgte schrittweise und wurde mit **Git versioniert**, sodass die einzelnen Lern- und Entwicklungsschritte über die Commit-History nachvollziehbar sind.  
 Durch diese Arbeit konnte ich meine Kenntnisse in **Funktionen, Datenstrukturen, objektorientierter Programmierung und sauberem Code-Design in Kotlin** weiter vertiefen.
+
+---
+
+### Sitzung 3 - Freitag, 23.01.2026
+
+**Arbeitspakete:**
+
+- [ ] **Kotlin-Tutorial durcharbeiten:** Ein von Fred AI erstelltes Kotlin-Tutorial durcharbeiten, um die bisherigen Grundlagen zu festigen und neue Konzepte kennenzulernen.
+- [ ] **Aufgaben selbstständig umsetzen:** Die im Tutorial enthaltenen Aufgaben eigenständig in Kotlin lösen und testen.
+- [ ] **Objektorientierte Konzepte vertiefen:** Den Einsatz von Klassen, Datenklassen und Methoden anhand praktischer Beispiele weiter üben.
+- [ ] **Projekt erweitern:** Die im Tutorial gelernten Konzepte durch eigene Anpassungen oder neue Funktionen im bestehenden Projekt anwenden.
+
+>**Hinweis:**  
+>Das Tutorial wird mithilfe von **Fred AI** erstellt. Fred AI ist ein von mir entwickelter AI-Tutor, basierend auf **qwen2.5:32b-instruct**, und wird ausschliesslich als **Lernhilfe** eingesetzt (z. B. zur Erklärung von Konzepten und zur >Erstellung von Übungsaufgaben). Die Aufgaben werden selbstständig gelöst; Fred AI dient nicht zur direkten Lösung der Aufgaben.

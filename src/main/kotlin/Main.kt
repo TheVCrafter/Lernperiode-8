@@ -1,100 +1,123 @@
-import java.lang.Exception
 import kotlin.random.Random
 
-fun main(args: Array<String>) {
-    println("Hello World!")
-    val aChar = 'a'
-    println("This is the char: $aChar")
-    val number1 = 10
-    val number2 = 54
-    val result = number1 + number2
-    println("$number1 + $number2 = $result")
-    var counter = 0
-    var hasRun10Times = false
-    while (!hasRun10Times){
-        counter ++
-        println("The loop run $counter Times")
-        if(counter == 10) {
-            hasRun10Times = true
-        }
-    }
-    println("Loop successfully terminated after running $counter times!")
-    for(i in 0..10){
-        println(i)
-    }
-    val text = "This is a string!"
-    println(text)
-    val randomArray = arrayOf(0,1,2,3,4,5,6,7,8,9,10)
-    for (i in randomArray){
-        println(i)
-    }
-    val randomValue = (0..1).random()
-    if (randomValue == 1) {
-        println("You win!")
-    }
-    else {
-        println("You lose!")
-    }
-    print("Enter a Number between 1 and 7: ")
-    while (true){
-        try {
-            val day = when(readln().toInt()){
-                1 -> "Monday"
-                2 -> "Tuesday"
-                3 -> "Wednesday"
-                4 -> "Thursday"
-                5 -> "Friday"
-                6 -> "Saturday"
-                7 -> "Sunday"
-                else -> "invalid Input"
-            }
-            if(day != "invalid Input") {
-                println("Your random Day is $day")
-                break
-            }
-            else {
-                println("Your input was invalid, please try again!")
-            }
-        }
-        catch (e:Exception){
-            throw e
-        }
-    }
-    print("Enter a first Number: ")
-    val firstValue = readln().toInt()
-    print("Enter a second Number: ")
-    val secondValue = readln().toInt()
-    print("Enter a Operator [*],[/],[+],[-]: ")
-    val operator = readln()[0]
-    val calculator = Calculator(firstValue, secondValue, operator)
-    println(calculator.Calculate())
+fun main() {
+    val shoppingList = ShoppingList()
 
-    createMap()
-    val sentenceMap = createMap()
-    println(giveRandomSentence(sentenceMap))
-    encryptRandomArray()
+    while (true) {
+        println()
+        println("===== Kotlin CLI =====")
+        println("1) Add item to shopping list")
+        println("2) Show shopping list")
+        println("3) Calculator")
+        println("4) Random day (1-7)")
+        println("5) Random sentence")
+        println("6) Encrypt random CharArray")
+        println("0) Exit")
+        print("Choose an option: ")
+
+        when (readIntOrNull()) {
+            1 -> shoppingList.addItem()
+            2 -> shoppingList.displayList()
+            3 -> runCalculator()
+            4 -> runDayPicker()
+            5 -> runRandomSentence()
+            6 -> encryptRandomArray()
+            0 -> {
+                println("Goodbye!")
+                return
+            }
+            else -> println("Invalid option. Try again.")
+        }
+    }
 }
-public fun createMap(): Map<Int,String>{
+
+private fun runCalculator() {
+    val first = readInt("Enter the first number: ")
+    val second = readInt("Enter the second number: ")
+    val op = readOperator("Enter an operator (+, -, *, /): ")
+
+    val calculator = Calculator(first, second, op)
+    println("Result: ${calculator.Calculate()}")
+}
+
+private fun runDayPicker() {
+    val dayNumber = readInt("Enter a number between 1 and 7: ", min = 1, max = 7)
+
+    val day = when (dayNumber) {
+        1 -> "Monday"
+        2 -> "Tuesday"
+        3 -> "Wednesday"
+        4 -> "Thursday"
+        5 -> "Friday"
+        6 -> "Saturday"
+        7 -> "Sunday"
+        else -> "Invalid"
+    }
+
+    println("Day: $day")
+}
+
+private fun runRandomSentence() {
+    val sentences = createMap()
+    println(giveRandomSentence(sentences))
+}
+
+fun createMap(): Map<Int, String> {
     return mapOf(
         0 to "I like Coffee!",
         1 to "This is Kotlin!",
         2 to "I coded this!"
     )
 }
-public fun giveRandomSentence(sentenceMap: Map<Int,String>) : String
-{
-    val randomInt = (Random.nextInt(0,3))
+
+fun giveRandomSentence(sentenceMap: Map<Int, String>): String {
+    val randomInt = Random.nextInt(0, sentenceMap.size)
     return sentenceMap.getValue(randomInt)
 }
-public fun encryptRandomArray()
-{
 
+fun encryptRandomArray() {
     val chars = ('a'..'z') + ('A'..'Z')
     val randomChars = CharArray(10) { chars.random() }
-    println("The original CharArray is: $randomChars")
-    val encryptedCharArray = CharArray(randomChars.size)
-    for(i in 0 .. randomChars.lastIndex){
-        encryptedCharArray[i] = (randomChars[i].code + 5).toChar()
+
+    println("Original:  ${randomChars.concatToString()}")
+
+    val shift = 5
+    val encrypted = CharArray(randomChars.size) { i ->
+        (randomChars[i].code + shift).toChar()
     }
-    println("The encrypted CharArray is: $encryptedCharArray")
+
+    println("Encrypted: ${encrypted.concatToString()}")
+}
+
+private fun readInt(prompt: String, min: Int? = null, max: Int? = null): Int {
+    while (true) {
+        print(prompt)
+        val value = readIntOrNull()
+        if (value == null) {
+            println("Please enter a valid whole number.")
+            continue
+        }
+        if (min != null && value < min) {
+            println("Please enter a number >= $min.")
+            continue
+        }
+        if (max != null && value > max) {
+            println("Please enter a number <= $max.")
+            continue
+        }
+        return value
+    }
+}
+
+private fun readIntOrNull(): Int? = readln().trim().toIntOrNull()
+
+private fun readOperator(prompt: String): Char {
+    while (true) {
+        print(prompt)
+        val input = readln().trim()
+        if (input.length == 1 && input[0] in charArrayOf('+', '-', '*', '/')) {
+            return input[0]
+        }
+        println("Invalid operator. Use one of: + - * /")
+    }
 }

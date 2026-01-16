@@ -1,4 +1,5 @@
 import java.lang.Exception
+import kotlin.random.Random
 
 fun main(args: Array<String>) {
     println("Hello World!")
@@ -68,4 +69,32 @@ fun main(args: Array<String>) {
     val calculator = Calculator(firstValue, secondValue, operator)
     println(calculator.Calculate())
 
+    createMap()
+    val sentenceMap = createMap()
+    println(giveRandomSentence(sentenceMap))
+    encryptRandomArray()
+}
+public fun createMap(): Map<Int,String>{
+    return mapOf(
+        0 to "I like Coffee!",
+        1 to "This is Kotlin!",
+        2 to "I coded this!"
+    )
+}
+public fun giveRandomSentence(sentenceMap: Map<Int,String>) : String
+{
+    val randomInt = (Random.nextInt(0,3))
+    return sentenceMap.getValue(randomInt)
+}
+public fun encryptRandomArray()
+{
+
+    val chars = ('a'..'z') + ('A'..'Z')
+    val randomChars = CharArray(10) { chars.random() }
+    println("The original CharArray is: $randomChars")
+    val encryptedCharArray = CharArray(randomChars.size)
+    for(i in 0 .. randomChars.lastIndex){
+        encryptedCharArray[i] = (randomChars[i].code + 5).toChar()
+    }
+    println("The encrypted CharArray is: $encryptedCharArray")
 }

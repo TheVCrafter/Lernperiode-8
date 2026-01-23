@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "tutorial_id": "tutorial_2b5db024e686455d98b80ae75ada3cf1",
+    "programming_language": "kt",
+    "difficulty": "Beginner+ (project-focused)"
+  },
+  "steps": [
+    {
+      "step_number": 1,
+      "step_title": "Project Setup and Playground File",
+      "spoken_text": "Today we’ll work directly with your CLI mini-project style. We'll add a safe place to experiment without breaking your main program.",
+      "readme_text": "# Step 1: Project Setup and a Playground File\nYour project already has multiple files (Main, ShoppingList, Calculator, CliColor).  \nCreate a **separate playground file** for tutorial experiments:\n\n**File name:** `TutorialPlayground.kt`\n\n```kt\nfun main() {\n    println(\"Tutorial playground ready!\")\n}\n```\n\n**Goal:** Keep learning code separate from your real menu app. Later, you can copy the good parts into the project.\n",
+      "next_prompt": "Teach reusable input helpers (readInt, readNonEmptyString, readChoice) and where they should live.",
+      "finished": false,
+      "concepts_covered": [
+        "project structure",
+        "separation of concerns",
+        "main function"
+      ],
+      "difficulty": "Beginner",
+      "common_mistakes": [
+        "Mixing learning code into production code and making the project hard to maintain."
+      ]
+    },
+    {
+      "step_number": 2,
+      "step_title": "Reusable Console Input Helpers",
+      "spoken_text": "You already validate input. Now we’ll make those helpers reusable and consistent across your project.",
+      "readme_text": "# Step 2: Reusable Console Input Helpers\nIn your code, you have `readInt()` in more than one place.  \nCreate a **single** set of input helpers (e.g., in `ConsoleInput.kt`) and use them everywhere.\n\nExample helpers:\n\n```kt\nfun readNonEmptyString(prompt: String): String {\n    while (true) {\n        print(prompt)\n        val value = readLine()?.trim().orEmpty()\n        if (value.isNotEmpty()) return value\n        println(\"Please enter a non-empty text.\")\n    }\n}\n\nfun readInt(prompt: String, min: Int? = null, max: Int? = null): Int {\n    while (true) {\n        print(prompt)\n        val value = readLine()?.trim()?.toIntOrNull()\n        if (value == null) {\n            println(\"Please enter a valid whole number.\")\n            continue\n        }\n        if (min != null && value < min) {\n            println(\"Please enter a number >= $min.\")\n            continue\n        }\n        if (max != null && value > max) {\n            println(\"Please enter a number <= $max.\")\n            continue\n        }\n        return value\n    }\n}\n```\n\n**Mini task:** Create `readOperator()` as a reusable function too.\n",
+      "next_prompt": "Teach enums for menu choices and operators, replacing raw Char/String comparisons.",
+      "finished": false,
+      "concepts_covered": [
+        "functions",
+        "loops",
+        "null-safety",
+        "toIntOrNull()",
+        "DRY"
+      ],
+      "difficulty": "Beginner",
+      "common_mistakes": [
+        "Copy-pasting input validation code into multiple files instead of reusing it.",
+        "Using `!!` and risking a crash instead of handling null safely."
+      ]
+    },
+    {
+      "step_number": 3,
+      "step_title": "Enums for Operators and Menu Choices",
+      "spoken_text": "Enums make your code safer than raw characters. We'll model operators and menu actions with types.",
+      "readme_text": "# Step 3: Enums for Operators and Menu Choices\nInstead of using `Char` for operators, create an enum:\n\n```kt\nenum class Operator(val symbol: Char) {\n    ADD('+'),\n    SUBTRACT('-'),\n    MULTIPLY('*'),\n    DIVIDE('/');\n\n    companion object {\n        fun fromChar(c: Char): Operator? =\n            values().firstOrNull { it.symbol == c }\n    }\n}\n```\n\nNow your calculator can accept `Operator` instead of `Char`.\n\n**Mini task:** Create a `MenuOption` enum with numbers like `'1'`, `'2'`, `'0'`, etc.\n",
+      "next_prompt": "Teach sealed classes vs enums and when to use which (e.g., for richer menu actions).",
+      "finished": false,
+      "concepts_covered": [
+        "enum class",
+        "companion object",
+        "firstOrNull",
+        "type safety"
+      ],
+      "difficulty": "Beginner",
+      "common_mistakes": [
+        "Keeping logic as raw chars/strings and later having many fragile `when` branches.",
+        "Forgetting that Kotlin enums can have properties and functions too."
+      ]
+    },
+    {
+      "step_number": 4,
+      "step_title": "Refactoring Calculator: Logic vs User Interaction",
+      "spoken_text": "We’ll separate calculation logic from reading input. This makes classes easier to test and reuse.",
+      "readme_text": "# Step 4: Refactoring Calculator (Separation of Concerns)\nA calculator class should **calculate**, not read from the console.\n\nSuggested shape:\n\n```kt\nclass Calculator {\n    fun calculate(a: Int, b: Int, op: Operator): Int? {\n        return when (op) {\n            Operator.ADD -> a + b\n            Operator.SUBTRACT -> a - b\n            Operator.MULTIPLY -> a * b\n            Operator.DIVIDE -> if (b != 0) a / b else null\n        }\n    }\n}\n```\n\nThen `Main.kt` is responsible for:\n- reading inputs\n- validating operator\n- printing errors\n",
+      "next_prompt": "Teach Result/exception-free error handling patterns: nullable, sealed result type, and Kotlin Result.",
+      "finished": false,
+      "concepts_covered": [
+        "class design",
+        "when expression",
+        "nullable results",
+        "single responsibility"
+      ],
+      "difficulty": "Beginner",
+      "common_mistakes": [
+        "Reading console input inside domain logic classes, which makes testing and reuse harder.",
+        "Using exceptions for normal control flow (like division by zero)."
+      ]
+    },
+    {
+      "step_number": 5,
+      "step_title": "Data Classes and Collection Operations in ShoppingList",
+      "spoken_text": "You already use a data class. Now we’ll do practical list operations: remove, update, and search.",
+      "readme_text": "# Step 5: Data Classes + Practical Collection Operations\nYou have:\n\n```kt\ndata class Item(val name: String, val amount: Int, val price: java.math.BigDecimal)\n```\n\nUseful operations:\n- remove by index\n- update an item (copy)\n- search by name (case-insensitive)\n\nExample patterns:\n\n```kt\nval updated = oldItem.copy(amount = oldItem.amount + 1)\n\nval matches = items.filter { it.name.contains(query, ignoreCase = true) }\n```\n\n**Mini task:** Add a method `removeItem()` that asks for an index and removes that entry safely.\n",
+      "next_prompt": "Teach extension functions and how to create small reusable helpers for lists (e.g., totalCost()).",
+      "finished": false,
+      "concepts_covered": [
+        "data class",
+        "copy()",
+        "MutableList",
+        "filter()",
+        "contains(ignoreCase)"
+      ],
+      "difficulty": "Beginner",
+      "common_mistakes": [
+        "Not validating indices before removing from a list.",
+        "Mutating items in a confusing way instead of using `copy()` for data classes when appropriate."
+      ]
+    },
+    {
+      "step_number": 6,
+      "step_title": "Extension Functions for Clean Code",
+      "spoken_text": "Extension functions help you keep code readable. We’ll create helpers like total cost and formatted output.",
+      "readme_text": "# Step 6: Extension Functions\nExtension functions let you add behavior without editing the original class.\n\nExamples:\n\n```kt\nfun Item.lineTotal(): java.math.BigDecimal =\n    price.multiply(java.math.BigDecimal(amount))\n\nfun List<Item>.totalCost(): java.math.BigDecimal =\n    fold(java.math.BigDecimal.ZERO) { acc, item -> acc + item.lineTotal() }\n```\n\n**Mini task:** Replace manual total calculation with `items.totalCost()`.\n",
+      "next_prompt": "Teach lambdas deeper: map, fold, reduce, and choosing the right one.",
+      "finished": false,
+      "concepts_covered": [
+        "extension functions",
+        "fold()",
+        "clean code"
+      ],
+      "difficulty": "Beginner",
+      "common_mistakes": [
+        "Overusing loops when a standard library function is clearer.",
+        "Using `reduce()` on empty lists and crashing; prefer `fold()` with a start value."
+      ]
+    },
+    {
+      "step_number": 7,
+      "step_title": "Lambdas for Sorting and Grouping",
+      "spoken_text": "Now we’ll use lambdas to sort and group shopping list items and produce nicer output.",
+      "readme_text": "# Step 7: Lambdas for Sorting and Grouping\nUseful patterns:\n\n```kt\nval sortedByName = items.sortedBy { it.name.lowercase() }\nval sortedByPrice = items.sortedByDescending { it.price }\n\nval grouped = items.groupBy { it.name.firstOrNull()?.uppercaseChar() ?: '#' }\n```\n\n**Mini task:** Add a menu option that prints the shopping list sorted by name.\n",
+      "next_prompt": "Teach higher-order functions and passing functions as parameters (e.g., printList(formatter)).",
+      "finished": false,
+      "concepts_covered": [
+        "sortedBy",
+        "sortedByDescending",
+        "groupBy",
+        "lambdas"
+      ],
+      "difficulty": "Beginner",
+      "common_mistakes": [
+        "Sorting the mutable list in-place when you only wanted a sorted view.",
+        "Forgetting that `sortedBy` returns a new list and doesn’t change the original."
+      ]
+    },
+    {
+      "step_number": 8,
+      "step_title": "Sealed Classes for Menu Actions",
+      "spoken_text": "Sealed classes are great when an action needs data, not just a label. We'll model menu commands cleanly.",
+      "readme_text": "# Step 8: Sealed Classes for Menu Actions\nEnums are great for fixed values.  \nSealed classes shine when each action can carry different data.\n\nExample:\n\n```kt\nsealed class MenuAction {\n    data object Exit : MenuAction()\n    data object ShowList : MenuAction()\n    data object AddItem : MenuAction()\n    data class RemoveItem(val index: Int) : MenuAction()\n}\n```\n\nIn `when(action)`, Kotlin can enforce exhaustiveness.\n\n**Mini task:** Create a `MenuAction` sealed class and map a key press to an action.\n",
+      "next_prompt": "Teach exhaustive when and why sealed classes help prevent missing cases.",
+      "finished": false,
+      "concepts_covered": [
+        "sealed class",
+        "data object",
+        "exhaustive when"
+      ],
+      "difficulty": "Beginner",
+      "common_mistakes": [
+        "Using a huge `when` on raw chars and forgetting to handle new options later."
+      ]
+    },
+    {
+      "step_number": 9,
+      "step_title": "Interfaces for Pluggable Features",
+      "spoken_text": "Interfaces are useful when you want multiple implementations, like different calculators or different printers.",
+      "readme_text": "# Step 9: Interfaces (Pluggable Design)\nA simple interface:\n\n```kt\ninterface Command {\n    val key: Char\n    val label: String\n    fun run()\n}\n```\n\nThen you can have:\n\n```kt\nclass ShowListCommand(...) : Command { ... }\nclass AddItemCommand(...) : Command { ... }\n```\n\n**Mini task:** Implement 2 commands and store them in a list. Use `firstOrNull` to find the chosen command by key.\n",
+      "next_prompt": "Teach dependency injection basics (passing ShoppingList/Calculator into commands).",
+      "finished": false,
+      "concepts_covered": [
+        "interfaces",
+        "polymorphism",
+        "lists of objects",
+        "firstOrNull"
+      ],
+      "difficulty": "Beginner",
+      "common_mistakes": [
+        "Creating commands that depend on global variables instead of passing dependencies cleanly.",
+        "Trying to instantiate an interface directly (you must instantiate a class that implements it)."
+      ]
+    },
+    {
+      "step_number": 10,
+      "step_title": "Mini Challenge: Add 'Remove Item' + Refactor",
+      "spoken_text": "Time to apply what you learned: one feature, cleanly integrated, with small refactoring.",
+      "readme_text": "# Step 10: Mini Challenge\nAdd a new feature to your project:\n\n**Feature:** Remove an item from the shopping list\n\nRequirements:\n- Ask the user for an index (1-based input)\n- Validate the index\n- Remove the item\n- Print what was removed\n- Keep the code clean (no duplicated input code)\n\nBonus goals (optional):\n- Use an extension function for `totalCost()`\n- Add a sorted display option using `sortedBy`\n\n**Done means:** It works from the menu and the program still feels tidy.\n",
+      "next_prompt": "Teach basic testing approaches: writing small pure functions and testing them with sample inputs.",
+      "finished": false,
+      "concepts_covered": [
+        "project integration",
+        "refactoring",
+        "feature development"
+      ],
+      "difficulty": "Beginner",
+      "common_mistakes": [
+        "Adding the feature directly in `main()` instead of inside `ShoppingList`/commands.",
+        "Not handling invalid indices and crashing the program."
+      ]
+    }
+  ]
+}

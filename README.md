@@ -92,10 +92,10 @@ Durch diese Arbeit konnte ich meine Kenntnisse in **Funktionen, Datenstrukturen,
 
 **Arbeitspakete:**
 
-- [ ] **Kotlin-Tutorial durcharbeiten:** Ein von Fred AI erstelltes Kotlin-Tutorial durcharbeiten, um die bisherigen Grundlagen zu festigen und neue Konzepte kennenzulernen.
-- [ ] **Aufgaben selbstständig umsetzen:** Die im Tutorial enthaltenen Aufgaben eigenständig in Kotlin lösen und testen.
-- [ ] **Objektorientierte Konzepte vertiefen:** Den Einsatz von Klassen, Datenklassen und Methoden anhand praktischer Beispiele weiter üben.
-- [ ] **Projekt erweitern:** Die im Tutorial gelernten Konzepte durch eigene Anpassungen oder neue Funktionen im bestehenden Projekt anwenden.
+- [X] **Kotlin-Tutorial durcharbeiten:** Ein von Fred AI erstelltes Kotlin-Tutorial durcharbeiten, um die bisherigen Grundlagen zu festigen und neue Konzepte kennenzulernen.
+- [X] **Aufgaben selbstständig umsetzen:** Die im Tutorial enthaltenen Aufgaben eigenständig in Kotlin lösen und testen.
+- [X] **Objektorientierte Konzepte vertiefen:** Den Einsatz von Klassen, Datenklassen und Methoden anhand praktischer Beispiele weiter üben.
+- [X] **Projekt erweitern:** Die im Tutorial gelernten Konzepte durch eigene Anpassungen oder neue Funktionen im bestehenden Projekt anwenden.
 
 >**Hinweis:**  
 >Das Tutorial wird mithilfe von **Fred AI** erstellt. Fred AI ist ein von mir entwickelter AI-Tutor, basierend auf **qwen2.5:32b-instruct**, und wird ausschliesslich als **Lernhilfe** eingesetzt (z. B. zur Erklärung von Konzepten und zur >Erstellung von Übungsaufgaben). Die Aufgaben werden selbstständig gelöst; Fred AI dient nicht zur direkten Lösung der Aufgaben.

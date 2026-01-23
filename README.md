@@ -99,3 +99,12 @@ Durch diese Arbeit konnte ich meine Kenntnisse in **Funktionen, Datenstrukturen,
 
 >**Hinweis:**  
 >Das Tutorial wird mithilfe von **Fred AI** erstellt. Fred AI ist ein von mir entwickelter AI-Tutor, basierend auf **qwen2.5:32b-instruct**, und wird ausschliesslich als **Lernhilfe** eingesetzt (z. B. zur Erklärung von Konzepten und zur >Erstellung von Übungsaufgaben). Die Aufgaben werden selbstständig gelöst; Fred AI dient nicht zur direkten Lösung der Aufgaben.
+
+**Lernbericht:**
+
+Heute habe ich mein Kotlin-Projekt weiterentwickelt und neue Konzepte praktisch angewendet.  
+Ich habe mit **Klassen, Datenklassen und Enums** gearbeitet und den Code so umgebaut, dass **Logik und Benutzereingaben** klar getrennt sind.  
+Ausserdem habe ich **Extension Functions**, **Lambdas** und einfache **Collection-Funktionen** genutzt, um den Code übersichtlicher zu gestalten.
+
+Zum Testen neuer Funktionen habe ich ein separates **TutorialPlayground-File** verwendet.  
+Dadurch konnte ich meine Kenntnisse in **Kotlin und objektorientierter Programmierung** weiter vertiefen.

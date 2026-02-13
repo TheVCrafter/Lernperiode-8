@@ -25,9 +25,9 @@ You'll learn how to:
 * Handle multiple game runs smoothly
 
 **Reference / Full Code:**
-The full working Kotlin file for this tutorial is included in this repository: [`SnakeGame.kt`](../src/main/kotlin/SnakeGame.kt)
+The full working Kotlin file for this tutorial is included in this repository: [`SnakeGame.kt`](https://raw.githubusercontent.com/thevcrafter/Lernperiode-8/main/src/main/kotlin/SnakeGame.kt)
 
-![Snake game final look](../images/SnakeGame.png)
+![Snake game final look](https://raw.githubusercontent.com/thevcrafter/Lernperiode-8/main/images/SnakeGame.png)
 
 ---
 
@@ -233,7 +233,7 @@ fun main() {
 * Multiple runs without restarting program
 * Score tracking
 
-![Snake moving gif](../images/SnakeMoving.gif)
+![Snake moving gif](https://raw.githubusercontent.com/thevcrafter/Lernperiode-8/main/images/)SnakeMoving.gif)
 
 ---
 

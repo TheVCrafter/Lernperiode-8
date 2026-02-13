@@ -3,6 +3,7 @@ import kotlin.random.Random
 fun main() {
     val shoppingList = ShoppingList()
     val calculator = Calculator()
+    val snakeGame = SnakeGame()
 
     while (true) {
         println()
@@ -16,11 +17,12 @@ fun main() {
         println("${CliColor.YELLOW}7) Random day (1-7)${CliColor.RESET}")
         println("${CliColor.YELLOW}8) Random sentence${CliColor.RESET}")
         println("${CliColor.YELLOW}9) Encrypt random CharArray${CliColor.RESET}")
-        println("${CliColor.YELLOW}0) Exit${CliColor.RESET}")
-
+        println("${CliColor.YELLOW}0) Play SnakeGame${CliColor.RESET}")
+        println("${CliColor.YELLOW}ESC) Exit${CliColor.RESET}")
+        val ESC = '\u001B'
         val key = ConsoleInput.readMenuKey(
-            validKeys = setOf('0','1','2','3','4','5','6','7','8','9'),
-            prompt = "${CliColor.CYAN}Choose an option [0-9]: ${CliColor.RESET}"
+            validKeys = setOf('0','1','2','3','4','5','6','7','8','9', ESC),
+            prompt = "${CliColor.CYAN}Choose an option [0-9] or [ESC]: ${CliColor.RESET}"
         )
 
         when (key) {
@@ -33,7 +35,8 @@ fun main() {
             '7' -> runDayPicker()
             '8' -> runRandomSentence()
             '9' -> encryptRandomArray()
-            '0' -> {
+            '0' -> snakeGame.start()
+            '\u001B' -> {
                 println()
                 println("${CliColor.GREEN}Goodbye!${CliColor.RESET}")
                 return

@@ -233,7 +233,7 @@ fun main() {
 * Multiple runs without restarting program
 * Score tracking
 
-![Snake moving gif](https://raw.githubusercontent.com/thevcrafter/Lernperiode-8/main/images/)SnakeMoving.gif)
+![Snake moving gif](https://raw.githubusercontent.com/thevcrafter/Lernperiode-8/main/images/SnakeMoving.gif)
 
 ---
 
